@@ -1,5 +1,5 @@
 
-public class MyInsertionSort {
+public class MyInsertionSort2 {
 	
 	public static void main(String[] args) {
 		int [] array = new int [10];
@@ -9,17 +9,17 @@ public class MyInsertionSort {
 		MyOwnInsertionSort(array);
 	}
 		
-	public static void MyOwnInsertionSort (int [] array) {
+	public static <AnyType extends Comparable <AnyType>> void MyOwnInsertionSort (int [] array) {
 		System.out.println("Unsorted array: ");
 		for (int i = 0; i < array.length; i++) {
 			System.out.println("element: " + array[i]);
 		}
 		for (int i = 1; i < array.length; i++) {
 			int j;
-			int tmp = array[i];
+			Comparable<Integer> tmp = array[i];
 			
 			for (j = i; j > 0; j--) {
-				if (tmp < array[j-1]) {
+				if (tmp.compareTo(array[j-1]) < 0) {
 					array[j] = array[j-1];
 				}
 			}
